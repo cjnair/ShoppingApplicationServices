@@ -1,13 +1,18 @@
 package com.app.smartshop.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.smartshop.service.entity.Product;
 import com.app.smartshop.service.entity.Users;
 import com.app.smartshop.service.io.ItemInfo;
 import com.app.smartshop.service.io.ItemsResponse;
 import com.app.smartshop.service.io.LoginRequest;
 import com.app.smartshop.service.io.UserProfileResponse;
+import com.app.smartshop.service.repo.ProductRespository;
 import com.app.smartshop.service.repo.UsersRespository;
 
 @Service
@@ -15,6 +20,9 @@ public class UtilityServiceImpl implements UtilityService {
 
 	@Autowired
 	UsersRespository userRepository;
+
+	@Autowired
+	ProductRespository productRepository;
 
 	@Override
 	public UserProfileResponse getUserDetails(LoginRequest request) {
@@ -33,8 +41,18 @@ public class UtilityServiceImpl implements UtilityService {
 
 	@Override
 	public ItemsResponse getAllProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		ItemsResponse response = new ItemsResponse();
+		response.setItemdetails(new ArrayList<ItemInfo>());
+		List<Product> list = (List<Product>) productRepository.findAll();
+		for (Product product : list) {
+			ItemInfo info = new ItemInfo();
+			info.setItemCode(product.getItemCode());
+			info.setItemName(product.getItemName());
+			info.setAvailable(product.isAvailable());
+			info.setQuantity(product.getQuantity());
+			response.getItemdetails().add(info);
+		}
+		return response;
 	}
 
 	@Override

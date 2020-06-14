@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.smartshop.service.io.ItemsResponse;
 import com.app.smartshop.service.io.LoginRequest;
 import com.app.smartshop.service.io.UserProfileResponse;
 
@@ -20,6 +21,13 @@ public class RestServiceController {
 	public ResponseEntity<UserProfileResponse> loadUser(@RequestBody LoginRequest request) {
 
 		return new ResponseEntity<UserProfileResponse>(service.getUserDetails(request), HttpStatus.OK);
+
+	}
+
+	@PostMapping(value = "/getAllProduct")
+	public ResponseEntity<ItemsResponse> getAllProduct() {
+
+		return new ResponseEntity<ItemsResponse>(service.getAllProducts(), HttpStatus.OK);
 
 	}
 }

@@ -2,7 +2,7 @@ package com.app.smartshop.service.io;
 
 import java.util.List;
 
-public class ItemSearchResponse {
+public class ItemsResponse {
 
 	List<ItemInfo> itemdetails;
 

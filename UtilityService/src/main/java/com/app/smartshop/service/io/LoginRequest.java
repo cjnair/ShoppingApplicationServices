@@ -1,8 +1,13 @@
 package com.app.smartshop.service.io;
 
+import com.sun.istack.NotNull;
+
 public class LoginRequest {
 
+	@NotNull
 	private String username;
+	
+	@NotNull
 	private String secretCode;
 	
 	public String getUsername() {

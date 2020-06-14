@@ -6,12 +6,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.smartshop.service.entity.Cart;
 import com.app.smartshop.service.entity.Product;
 import com.app.smartshop.service.entity.Users;
+import com.app.smartshop.service.io.AddCartRequest;
 import com.app.smartshop.service.io.ItemInfo;
 import com.app.smartshop.service.io.ItemsResponse;
 import com.app.smartshop.service.io.LoginRequest;
 import com.app.smartshop.service.io.UserProfileResponse;
+import com.app.smartshop.service.repo.CartRespository;
 import com.app.smartshop.service.repo.ProductRespository;
 import com.app.smartshop.service.repo.UsersRespository;
 
@@ -23,6 +26,9 @@ public class UtilityServiceImpl implements UtilityService {
 
 	@Autowired
 	ProductRespository productRepository;
+	
+	@Autowired
+	CartRespository cartRepository;
 
 	@Override
 	public UserProfileResponse getUserDetails(LoginRequest request) {
@@ -36,6 +42,7 @@ public class UtilityServiceImpl implements UtilityService {
 		response.setResponse("SUCCESS");
 		response.setPhone(user.getPhone());
 		response.setStatus("ACTIVE");
+		response.setUserId(user.getUserId());
 		return response;
 	}
 
@@ -59,6 +66,17 @@ public class UtilityServiceImpl implements UtilityService {
 	public ItemInfo getItemInfo(String itemcode) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void addToCart(AddCartRequest input) {
+		Cart cart = new Cart();
+		cart.setItemCode(input.getItemCode());
+		cart.setPrice(input.getPrice());
+		cart.setQuantity(input.getQuantity());
+		cart.setUserId(input.getUserId());
+		cartRepository.save(cart);
+		
 	}
 
 }

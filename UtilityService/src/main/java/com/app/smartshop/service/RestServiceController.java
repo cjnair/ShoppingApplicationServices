@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.smartshop.service.io.AddCartRequest;
 import com.app.smartshop.service.io.ItemsResponse;
 import com.app.smartshop.service.io.LoginRequest;
 import com.app.smartshop.service.io.UserProfileResponse;
@@ -30,4 +31,13 @@ public class RestServiceController {
 		return new ResponseEntity<ItemsResponse>(service.getAllProducts(), HttpStatus.OK);
 
 	}
+	
+	@PostMapping(value = "/addToCart")
+	public void addCart(@RequestBody AddCartRequest request) {
+
+		service.getAllProducts();
+
+	}
+	
+	// Show Cart
 }

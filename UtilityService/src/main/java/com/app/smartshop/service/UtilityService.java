@@ -1,5 +1,6 @@
 package com.app.smartshop.service;
 
+import com.app.smartshop.service.io.AddCartRequest;
 import com.app.smartshop.service.io.ItemInfo;
 import com.app.smartshop.service.io.ItemsResponse;
 import com.app.smartshop.service.io.LoginRequest;
@@ -12,4 +13,6 @@ public interface UtilityService {
 	public ItemsResponse getAllProducts();
 	
 	public ItemInfo getItemInfo(String itemcode);
+	
+	public void addToCart(AddCartRequest input);
 }

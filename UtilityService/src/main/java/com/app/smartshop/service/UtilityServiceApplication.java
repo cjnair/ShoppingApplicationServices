@@ -45,10 +45,10 @@ public class UtilityServiceApplication {
 	      repository.save(new Product("PR010", "Guitar", "Description.........", "image", BigDecimal.valueOf(10000.00),
 					true, 100, "First", "RA25"));
 	      
-	      userRepository.save(new Users("cjayaraj","Jayaraj", "Chevery", "jayaraj.chevery@gmail.com", "", "Male", "9632896726",
+	      userRepository.save(new Users("CUS001","cjayaraj","Jayaraj", "Chevery", "jayaraj.chevery@gmail.com", "", "Male", "9632896726",
 					"ACTIVE"));
 	      
-	      userRepository.save(new Users("priyanda","Priyanda", "L", "priyanda.l@gmail.com", "", "Male", "9632896726",
+	      userRepository.save(new Users("CUS002","priyanda","Priyanda", "L", "priyanda.l@gmail.com", "", "Male", "9632896726",
 					"ACTIVE"));
 	      
 	    };

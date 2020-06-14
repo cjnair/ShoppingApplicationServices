@@ -2,6 +2,8 @@ package com.app.smartshop.service.io;
 
 public class UserProfileResponse {
 
+	private String userId;
+	
 	private String firstName;
 	
 	private String lastName;
@@ -17,6 +19,15 @@ public class UserProfileResponse {
 	private String response;
 	
 	private String status;
+
+	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 	public String getResponse() {
 		return response;

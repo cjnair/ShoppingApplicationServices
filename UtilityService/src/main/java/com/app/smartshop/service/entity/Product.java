@@ -13,81 +13,55 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	private String itemCode;
 
-	private String itemName;
-
-	private String itemDetails;
-
-	private String itemImage;
-
+	private String productName;
+	private String description;
+	private Long avlQty;
+	private String location;
 	private BigDecimal price;
-
-	private boolean isAvailable;
-
-	private int quantity;
-
-	private String floorDetails;
-
-	private String rackDetails;
 
 	public Product() {
 
 	}
 
-	public Product(String itemCode, String itemName, String itemDetails, String itemImage, BigDecimal price,
-			boolean isAvailable, int quantity, String floorDetails, String rackDetails) {
-		this.itemCode = itemCode;
-		this.itemName = itemName;
-		this.itemDetails = itemDetails;
-		this.itemImage = itemImage;
-		this.price = price;
-		this.isAvailable = isAvailable;
-		this.quantity = quantity;
-		this.floorDetails = floorDetails;
-		this.rackDetails = rackDetails;
-	}
-	
 	public Long getId() {
 		return id;
 	}
-
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getItemCode() {
-		return itemCode;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setItemCode(String itemCode) {
-		this.itemCode = itemCode;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getItemName() {
-		return itemName;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public String getItemDetails() {
-		return itemDetails;
+	public Long getAvlQty() {
+		return avlQty;
 	}
 
-	public void setItemDetails(String itemDetails) {
-		this.itemDetails = itemDetails;
+	public void setAvlQty(Long avlQty) {
+		this.avlQty = avlQty;
 	}
 
-	public String getItemImage() {
-		return itemImage;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setItemImage(String itemImage) {
-		this.itemImage = itemImage;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	public BigDecimal getPrice() {
@@ -98,36 +72,14 @@ public class Product {
 		this.price = price;
 	}
 
-	public boolean isAvailable() {
-		return isAvailable;
+	public Product(String productName, String description, Long avlQty, String location, BigDecimal price) {
+		
+		this.productName = productName;
+		this.description = description;
+		this.avlQty = avlQty;
+		this.location = location;
+		this.price = price;
 	}
 
-	public void setAvailable(boolean isAvailable) {
-		this.isAvailable = isAvailable;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-	public String getFloorDetails() {
-		return floorDetails;
-	}
-
-	public void setFloorDetails(String floorDetails) {
-		this.floorDetails = floorDetails;
-	}
-
-	public String getRackDetails() {
-		return rackDetails;
-	}
-
-	public void setRackDetails(String rackDetails) {
-		this.rackDetails = rackDetails;
-	}
-
+	
 }

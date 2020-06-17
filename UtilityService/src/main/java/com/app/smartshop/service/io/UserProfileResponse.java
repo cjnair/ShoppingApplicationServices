@@ -19,6 +19,8 @@ public class UserProfileResponse {
 	private String response;
 	
 	private String status;
+	
+	private String token;
 
 	
 	public String getUserId() {
@@ -92,6 +94,15 @@ public class UserProfileResponse {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
 	
 	
 }

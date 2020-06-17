@@ -1,14 +1,14 @@
 package com.app.smartshop.service.io;
 
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotEmpty;
 
 public class LoginRequest {
 
-	@NotNull
+	@NotEmpty(message = "Username may not be empty")
 	private String username;
 	
-	@NotNull
-	private String secretCode;
+	@NotEmpty(message = "Password may not be empty")
+	private String password;
 	
 	public String getUsername() {
 		return username;
@@ -16,14 +16,13 @@ public class LoginRequest {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
-	public String getSecretCode() {
-		return secretCode;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
-	public void setSecretCode(String secretCode) {
-		this.secretCode = secretCode;
-	}
 	
 	
 }

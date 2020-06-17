@@ -1,6 +1,6 @@
 package com.app.smartshop.service.io;
 
-public class ItemSearchRequest {
+public class EmailRequest {
 	
 	private String itemName;
 	

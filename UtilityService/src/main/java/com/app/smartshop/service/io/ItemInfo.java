@@ -4,95 +4,51 @@ import java.math.BigDecimal;
 
 public class ItemInfo {
 
-	private String itemCode;
-	
-	private String itemName;
-	
-	private String itemDetails;
-	
-	private String itemImage;
-	
-	private BigDecimal price; 
-	
-	private boolean isAvailable;
-	
-	private int quantity;
-	
-	private String floorDetails;
-	
-	private String rackDetails;
-
-	public String getItemCode() {
-		return itemCode;
+    private Long id;
+    private String productName;
+    private String description;
+    private Long avlQty;
+    private String location;
+    private BigDecimal price;
+    
+	public Long getId() {
+		return id;
 	}
-
-	public void setItemCode(String itemCode) {
-		this.itemCode = itemCode;
+	public void setId(Long id) {
+		this.id = id;
 	}
-
-	public String getItemName() {
-		return itemName;
+	public String getProductName() {
+		return productName;
 	}
-
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
-
-	public String getItemDetails() {
-		return itemDetails;
+	public String getDescription() {
+		return description;
 	}
-
-	public void setItemDetails(String itemDetails) {
-		this.itemDetails = itemDetails;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-	public String getItemImage() {
-		return itemImage;
+	public Long getAvlQty() {
+		return avlQty;
 	}
-
-	public void setItemImage(String itemImage) {
-		this.itemImage = itemImage;
+	public void setAvlQty(Long avlQty) {
+		this.avlQty = avlQty;
 	}
-
-	public boolean isAvailable() {
-		return isAvailable;
+	public String getLocation() {
+		return location;
 	}
-
-	public void setAvailable(boolean isAvailable) {
-		this.isAvailable = isAvailable;
+	public void setLocation(String location) {
+		this.location = location;
 	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-	
-
 	public BigDecimal getPrice() {
 		return price;
 	}
-
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
 
-	public String getFloorDetails() {
-		return floorDetails;
-	}
-
-	public void setFloorDetails(String floorDetails) {
-		this.floorDetails = floorDetails;
-	}
-
-	public String getRackDetails() {
-		return rackDetails;
-	}
-
-	public void setRackDetails(String rackDetails) {
-		this.rackDetails = rackDetails;
-	}
+	
 	
 }

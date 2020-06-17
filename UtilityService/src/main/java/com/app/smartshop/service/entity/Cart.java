@@ -16,6 +16,8 @@ public class Cart {
 	
 	private String userId;
 	
+	private String itemName;
+	
 	private String itemCode;
 	
 	private int quantity;
@@ -24,6 +26,7 @@ public class Cart {
 	
 	private String status;
 
+	
 	public Long getId() {
 		return id;
 	}
@@ -72,5 +75,11 @@ public class Cart {
 		this.status = status;
 	}
 	
-	
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
 }

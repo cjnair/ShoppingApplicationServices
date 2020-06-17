@@ -1,18 +1,13 @@
 package com.app.smartshop.service.io;
 
-import java.math.BigDecimal;
-
 public class AddCartRequest {
 
-private String userId;
-	
-	private String itemCode;
+	private String userId;
+		
+	private String itemName;
 	
 	private int quantity;
 	
-	private BigDecimal price;
-	
-	private String status;
 
 	public String getUserId() {
 		return userId;
@@ -21,15 +16,7 @@ private String userId;
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
-	public String getItemCode() {
-		return itemCode;
-	}
-
-	public void setItemCode(String itemCode) {
-		this.itemCode = itemCode;
-	}
-
+	
 	public int getQuantity() {
 		return quantity;
 	}
@@ -38,20 +25,12 @@ private String userId;
 		this.quantity = quantity;
 	}
 
-	public BigDecimal getPrice() {
-		return price;
+	public String getItemName() {
+		return itemName;
 	}
 
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 	
 	
